@@ -60,7 +60,7 @@ function draw() {
   stroke('lightblue');
   theQuad();
 }
-
+//
 function theQuad() {
 
   var myData = [
