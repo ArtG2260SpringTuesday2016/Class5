@@ -1,80 +1,49 @@
-/*
-var baconWords = baconIpsum.split(' ');
-for (var i = 0; i < baconWords.length; i++) {
-  baconWords[i] = baconWords[i].length;
-}
-
-function setup() {
-  createCanvas(600,600)
-
-  for (var i = 0; i < baconWords.length; i++){
-    var rectHeight = baconWords[i] * 60;
-    var rectWidth = (width / baconWords.length);
-
-    fill('hotpink');
-    noStroke()
-    rect(i * rectWidth,width - rectHeight, rectWidth, rectHeight);
-  }
-}
-
-function draw() {
-  
-}
-
-function water() {
-  //water (animated part)
-  var waterX = 120;
-  var waterY = 505;
-  
-  //90% of habitable space on planet
-  fill('lightblue');
-  noStroke();
-  rect(waterX,waterY + 34.5,345,345);
-  
-  fill('black');
-  rect()
-  //50-80% of all life in ocean
-  //rect(waterX,waterY + 120.75,345,345);
-  
-  fill('red');
-  ellipse(120,505,30,30);
-}
-*/
+//takes in gdp's of various countries and outputs 
+//circles proportional to the gdp's 
 
 function setup() {
   createCanvas(600,600);
-  background('black');
-  
-  
+  background('darkgrey');
 }
-
 
 function draw() {
-  //text:
-  fill('lightblue');
+  fill('white');
   textSize(20);
   textFont("Arial");
-  text("Random Stats", 120, 90);
+  text("Countries by GDP", 120, 90);
   
-  noFill();
-  stroke('lightblue');
-  theQuad();
+  GDP()
 }
-//
-function theQuad() {
 
-  var myData = [
-    {text: "",  quadPoints: quad(120,160,465,160,465,505,120,505)},
-    {text: "different",  quadPoints: quad(120,160,465,160,120,505,465,505)},
-    //{text: "whatever",  quadPoints:  [70, 39, 9, 10]},
+function GDP() {
+  
+  var gdpArray = [
+  {name: "Qatar", gdp: [140649], textLoc: [30,400]},
+  {name: "Macau", gdp: [139767], textLoc: [75,420]},
+  {name: "Luxembourg", gdp: [97662], textLoc: [113,400]},
+  {name: "Singapore", gdp: [82763], textLoc: [165,420]},
+  {name: "Kuwait", gdp: [73246], textLoc: [210,400]},
+  {name: "Brunei", gdp: [71185], textLoc: [255,420]},
+  {name: "UAE", gdp: [67674], textLoc: [300,400]},
+  {name: "Norway", gdp: [64856], textLoc: [345,420]},
+  {name: "Switzerland", gdp: [57235], textLoc: [390,400]},
+  {name: "Hong Kong", gdp: [55084], textLoc: [445,420]},
+  {name: "United States", gdp: [54629], textLoc: [500,400]},
   ];
   
-    for(i = 0; i < myData.length; i++){
-      for(j = 0; j < myData.length; j++){
-        myData[i].text;
-        myData[j].quadPoints;
-      }
-    }
-    
   
+  for(i = 0; i < gdpArray.length; i++){
+    //text(gdpArray[i].name, 300,300,600,600);
+    fill('white');
+    textSize(10);
+    text(gdpArray[i].name, gdpArray[i].textLoc[0], gdpArray[i].textLoc[1], 600,600)
+  
+    for(j = 0; j < gdpArray.length; j++){
+      var circDim = gdpArray[i].gdp/1500;
+      noStroke();
+      fill('white');
+      ellipse((gdpArray[i].textLoc[0] + 30),(gdpArray[i].textLoc[1] - 150),circDim,circDim);
+      //console.log(gdpArray[i].gdp[j]);
+    }
+  }
 }
