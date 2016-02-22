@@ -14,14 +14,14 @@ function setup() {
 for (var i = 0; i < colorre.length; i++){
  var rectHeight = colorre[i] * 50;
  var rectWidth = (250 / colorre.length);
- fill('red');
+ fill(random(50,255),0,0);
  rect(i * rectWidth,width - rectHeight, rectWidth, rectHeight);
   }
 
 for (var i = 0; i < colorbl.length; i++){
  var rectHeight = colorbl[i] * 50;
  var rectWidth = (250 / colorbl.length);
-  fill('blue');
+  fill(0,0,random(50,255));
   rect((i * rectWidth)+250,width - rectHeight, rectWidth, rectHeight);
   }
 }
