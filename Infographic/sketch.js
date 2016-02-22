@@ -1,22 +1,22 @@
-var baconWords = baconIpsum.split(' ');
-for (var i = 0; i < baconWords.length; i++) {
-  baconWords[i] = baconWords[i].length;
+var homeRun = homeRuns.split(' ');
+for (var i = 0; i < homeRun.length; i++) {
+  homeRun[i] = homeRun[i];
 }
 
 function setup() {
-  createCanvas(600,600)
+  createCanvas(800,800)
+  
+  textSize(32)
 
-  for (var i = 0; i < baconWords.length; i++){
-    var rectHeight = baconWords[i] * 60;
-    var rectWidth = (width / baconWords.length);
-    console.log(rectWidth)
+  for (var i = 0; i < homeRun.length; i++){
+    var ellipseHeight = homeRun[i] ;
+    var ellipseWidth = random (100, 770);
 
-    fill('#f338de');
+    fill (random(1,255), random (1,255), random(1,255));
     noStroke()
-    rect(i * 10, width - rectHeight, rectWidth, rectHeight);
+    text(homeRun[i], (i * 16)+2, (ellipseWidth+5));
+    ellipse((i * 16)+22 , (ellipseWidth - ellipseHeight), ellipseHeight, ellipseHeight);
+    
   }
 }
 
-function draw() {
-
-}
