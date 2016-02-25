@@ -1,18 +1,21 @@
-var baconWords = baconIpsum.split(' ');
-for (var i = 0; i < baconWords.length; i++) {
-  baconWords[i] = baconWords[i].length;
-}
+//pages in each Harry Potter book
+var pagesData = [309,341,435,743,870,652,759];
+
+
 
 function setup() {
   createCanvas(600,600)
 
-  for (var i = 0; i < baconWords.length; i++){
-    var rectHeight = baconWords[i] * 60;
-    var rectWidth = (width / baconWords.length);
+var ellipseSize = function(pagesData){
+  for (var i = 0; i<pagesData.length; i++){
+    var ellipseWidthAndHeight = pagesData[i]/10;
+  }
+return ellipseSize(pagesData);
+}
 
-    fill('hotpink');
-    noStroke()
-    rect(i * rectWidth,width - rectHeight, rectWidth, rectHeight);
+  for (var i = 0; i<pagesData.length; i++){
+    noFill()
+    ellipse(300,(pagesData[i]/1.5)-150+ellipseSize, ellipseSize, ellipseSize);
   }
 }
 
